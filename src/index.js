@@ -82,6 +82,7 @@ import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
 import Drawer from '../packages/drawer/index.js';
 import Popconfirm from '../packages/popconfirm/index.js';
+import AimmButton from '../packages/aimm-button/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 
@@ -163,6 +164,7 @@ const components = [
   Avatar,
   Drawer,
   Popconfirm,
+  AimmButton,
   CollapseTransition
 ];
 
@@ -198,7 +200,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '2.13.2',
+  version: '0.0.2',
   locale: locale.use,
   i18n: locale.i18n,
   install,
@@ -284,5 +286,6 @@ export default {
   CascaderPanel,
   Avatar,
   Drawer,
-  Popconfirm
+  Popconfirm,
+  AimmButton
 };
