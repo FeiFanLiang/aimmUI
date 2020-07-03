@@ -1,0 +1,101 @@
+<!--
+ * @Author Lee Hui
+ * @Date 2020-06-18 09:34:03
+ * @LastEditTime 2020-06-18 10:29:51
+ * @Description 
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to, .fade-leave {
+  opacity: 0.5;
+}
+
+
+.square {
+  color: #fff;
+  font-size: 24px;
+  height: 100px;
+  background-color: #000;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21"></script>
+</head>
+<body>
+    <div id="demo">
+        
+      <!-- 洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地洒大地 -->
+      </div>
+</body>
+<script>
+    new Vue({
+  el: '#demo',
+  template:`
+  <div>
+            <button @click="show = !show">
+                Toggle
+              </button>
+              <transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @leave="leave" appear>
+                <div v-show="show" class="square">
+                  
+                  </div>
+              </transition>
+        </div>
+  `,
+  data: {
+    show: false
+  },
+  methods:{
+  beforeEnter(el){
+    if (!el.dataset) el.dataset = {};
+    el.dataset.oldPaddingTop = el.style.paddingTop;
+    el.dataset.oldPaddingBottom = el.style.paddingBottom;
+    el.style.transition = 'all 1s';
+    el.style.height = '0';
+    el.style.paddingTop = 0;
+    el.style.paddingBottom = 0;
+  },
+  enter(el){
+    
+    // var c = el.scrollHeight;
+   // debugger
+    // el.style.height = el.scrollHeight + 'px';
+    // el.style.height = 500 + 'px';
+    //   el.style.paddingTop = el.dataset.oldPaddingTop;
+    //   el.style.paddingBottom = el.dataset.oldPaddingBottom;
+    // if (el.scrollHeight !== 0) {
+    //   debugger
+    //   el.style.height = el.scrollHeight + 'px';
+    //   el.style.paddingTop = el.dataset.oldPaddingTop;
+    //   el.style.paddingBottom = el.dataset.oldPaddingBottom;
+    // } else {
+    //   debugger
+    //   el.style.height = '';
+    //   el.style.paddingTop = el.dataset.oldPaddingTop;
+    //   el.style.paddingBottom = el.dataset.oldPaddingBottom;
+    // }
+    el.scrollHeight
+    el.style.height = '';
+      el.style.paddingTop = el.dataset.oldPaddingTop;
+      el.style.paddingBottom = el.dataset.oldPaddingBottom;
+  },
+  afterEnter(el){
+  
+  },
+  leave(el){
+  
+  }
+  }
+})
+</script>
+</html>

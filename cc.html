@@ -1,0 +1,41 @@
+<!--
+ * @Author Lee Hui
+ * @Date 2020-06-18 10:14:35
+ * @LastEditTime 2020-06-18 10:48:37
+ * @Description 
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #test {
+            
+            width: 100px;
+            background-color: #000;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        史蒂芬森
+    </div>
+</body>
+<script>
+    var t = document.querySelector('#test');
+    t.style.height = 0;
+    // t.scrollHeight;
+    // t.style.height = ''
+    //debugger
+    setTimeout(() => {
+        t.scrollHeight;
+       // debugger
+       t.style.height = '20px'
+       //t.style.height = '100px'
+       
+    }, 1000);
+</script>
+</html>
